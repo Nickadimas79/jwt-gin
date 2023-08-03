@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/Nickadimas79/jwt-gin/models"
 	"log"
 
 	"github.com/Nickadimas79/jwt-gin/controllers"
+	"github.com/Nickadimas79/jwt-gin/models"
 
 	"github.com/gin-gonic/gin"
 )
@@ -21,6 +21,7 @@ func main() {
 	public := router.Group("/api")
 
 	public.POST("/register", controllers.Register)
+	public.POST("/login", controllers.Login)
 
 	fmt.Println("starting Gin server")
 	err := router.Run(":8080")
